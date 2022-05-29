@@ -17,7 +17,7 @@ public class RegistrationServiceImpl implements RegistrationService {
     @Override
     public Driver register(Driver driver) throws RegistrationException {
         Optional<Driver> dbDriver = driverService.findByLogin(driver.getLogin());
-        if (dbDriver.isEmpty() && driver.getPassword().length() >= MIN_PASSWORD_LENGTH) {
+        if (dbDriver.isPresent() && driver.getPassword().length() >= MIN_PASSWORD_LENGTH) {
             driverService.create(driver);
             return driver;
         }
