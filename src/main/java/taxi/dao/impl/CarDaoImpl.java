@@ -182,9 +182,9 @@ public class CarDaoImpl implements CarDao {
     }
 
     private void deleteDrivers(Long carId) {
-        String query = "DELETE FROM cars_drivers cd WHERE cd.car_id = ?";
+        String query = "DELETE FROM cars_drivers WHERE car_id = ?";
         try (Connection connection = ConnectionUtil.getConnection();
-             PreparedStatement deleteStatement = connection.prepareStatement(query)) {
+                PreparedStatement deleteStatement = connection.prepareStatement(query)) {
             deleteStatement.setLong(1, carId);
             deleteStatement.executeUpdate();
         } catch (SQLException e) {
@@ -214,8 +214,8 @@ public class CarDaoImpl implements CarDao {
 
     private Driver parseDriverFromResultSet(ResultSet resultSet) throws SQLException {
         Long driverId = resultSet.getObject("id", Long.class);
-        String name = resultSet.getNString("name");
-        String licenseNumber = resultSet.getNString("license_number");
+        String name = resultSet.getString("name");
+        String licenseNumber = resultSet.getString("license_number");
         String driverLogin = resultSet.getString("login");
         String password = resultSet.getString("password");
         Driver driver = new Driver();
@@ -229,14 +229,14 @@ public class CarDaoImpl implements CarDao {
 
     private Car parseCarFromResultSet(ResultSet resultSet) throws SQLException {
         Long manufacturerId = resultSet.getObject("manufacturer_id", Long.class);
-        String manufacturerName = resultSet.getNString("manufacturer_name");
-        String manufacturerCountry = resultSet.getNString("manufacturer_country");
+        String manufacturerName = resultSet.getString("manufacturer_name");
+        String manufacturerCountry = resultSet.getString("manufacturer_country");
         Manufacturer manufacturer = new Manufacturer();
         manufacturer.setId(manufacturerId);
         manufacturer.setName(manufacturerName);
         manufacturer.setCountry(manufacturerCountry);
         Long carId = resultSet.getObject("id", Long.class);
-        String model = resultSet.getNString("model");
+        String model = resultSet.getString("model");
         Car car = new Car();
         car.setId(carId);
         car.setModel(model);

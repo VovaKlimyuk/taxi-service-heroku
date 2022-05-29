@@ -70,3 +70,8 @@ header{
 .successMassage {
     color: green;
 }
+.select {
+    text-align: center;
+    padding: 10px 0;
+    max-width: 300px;
+}
