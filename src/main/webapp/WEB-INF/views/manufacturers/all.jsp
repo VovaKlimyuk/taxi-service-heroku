@@ -12,7 +12,6 @@
 <h2 class="formTitle">All Manufacturers</h2>
 <table class="table_dark">
     <tr>
-        <th>ID</th>
         <th>Name</th>
         <th>License number</th>
         <th></th>
@@ -20,9 +19,6 @@
     <jsp:useBean id="manufacturers" scope="request" type="java.util.List"/>
     <c:forEach var="manufacturer" items="${manufacturers}">
         <tr>
-            <td>
-                <c:out value="${manufacturer.id}"/>
-            </td>
             <td>
                 <c:out value="${manufacturer.name}"/>
             </td>

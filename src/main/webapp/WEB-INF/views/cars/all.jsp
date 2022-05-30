@@ -12,7 +12,6 @@
 <h2 class="formTitle">All Cars</h2>
 <table>
     <tr>
-        <th>ID</th>
         <th>Model</th>
         <th>Manufacturer name</th>
         <th>Manufacturer country</th>
@@ -22,9 +21,6 @@
     <jsp:useBean id="cars" scope="request" type="java.util.List"/>
     <c:forEach var="car" items="${cars}">
         <tr>
-            <td>
-                <c:out value="${car.id}"/>
-            </td>
             <td>
                 <c:out value="${car.model}"/>
             </td>
@@ -36,7 +32,7 @@
             </td>
             <td>
                 <c:forEach var="driver" items="${car.drivers}">
-                    ${driver.id} ${driver.name} ${driver.licenseNumber} <br>
+                    ${driver.name} ${driver.licenseNumber} <br>
                 </c:forEach>
             </td>
             <td>

@@ -12,16 +12,12 @@
 <h2 class="formTitle">All Drivers</h2>
 <table>
     <tr>
-        <th>ID</th>
         <th>Name</th>
         <th>License number</th>
         <th></th>
     </tr>
     <c:forEach var="driver" items="${drivers}">
         <tr>
-            <td>
-                <c:out value="${driver.id}"/>
-            </td>
             <td>
                 <c:out value="${driver.name}"/>
             </td>
