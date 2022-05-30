@@ -34,7 +34,7 @@
             <h5 class="errorMassage">${errorMessage}</h5>
         </div>
         <div class="formTitle">
-            <input type="submit" name="add" form="driver" value="add" class="submit">
+            <input type="submit" name="register" form="driver" value="add" class="submit">
             <a href="${pageContext.request.contextPath}/login">log in</a>
         </div>
     </form>
