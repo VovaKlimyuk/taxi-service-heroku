@@ -6,7 +6,8 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 public class ConnectionUtil {
-    private static final String URL = "jdbc:mysql://us-cdbr-east-05.cleardb.net/heroku_8411acf8e71aecc";
+    private static final String URL = "jdbc:mysql:"
+            + "//us-cdbr-east-05.cleardb.net/heroku_8411acf8e71aecc";
     private static final String USERNAME = "b50fadacb2bba3";
     private static final String PASSWORD = "b945d85f";
 
