@@ -1,5 +1,4 @@
-CREATE SCHEMA IF NOT EXISTS `taxi_service_schema` DEFAULT CHARACTER SET utf8;
-USE `taxi_service_schema`;
+USE `heroku_8411acf8e71aecc`;
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
